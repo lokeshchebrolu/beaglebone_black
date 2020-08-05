@@ -1,0 +1,22 @@
+First time configuration steps:
+1. Connect BBB via USB to UART convertor
+2. Open terminal
+3. dmesg <enter>
+4. Note down the ttyUSBx port name
+5. sudo minicom -s <enter>
+6. Selecte 'Serial port setup' using arrow keys.<enter>
+7. Press 'A' key
+8. Edit the port name with name noted in step 4. <enter>
+9. Make sure following are set as mentioned and <enter>
+	- Bps/Par/Bits is set to '115200 8N1'
+	- Hardware Flow Control is set to 'NO'
+	- Software Flow Control is set to 'NO'
+	- Above two are set to 'NO' as these pins are grounded in BBB
+10. Select 'Save setup as dfl' option using arrow keys. <enter>
+	- dfl means default. So no need to do this settings everytime minicom is opened.
+11. Select 'Exit' option using arrow keys. <enter>
+--Configuration completed--
+
+Note: Reset/replug power to BBB to boot via minicom after configuration
+
+Closing Minicom : Press Ctrl+A then press X. Then select 'YES'<enter>
