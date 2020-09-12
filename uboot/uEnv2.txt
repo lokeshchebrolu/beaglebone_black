@@ -1,0 +1,11 @@
+##loaded linux kernel image to DDR memory from SD card
+load mmc 0:2 0x82000000 /boot/uImage
+
+##loaded dtb image to DDR memory from SD card
+load mmc 0:2 0x88000000 /boot/am335x-boneblack.dtb
+
+##send bootargs to linux kernel from U-boot
+setenv bootargs console=ttyO0,115200 root=/dev/mmcblk0p2
+
+##boot linux kernel
+bootm 0x82000000 - 0x88000000
